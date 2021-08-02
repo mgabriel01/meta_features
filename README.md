@@ -12,7 +12,7 @@ get meta-features/profiles from bigwig files and gff annotations
               
               -> extra : Use the unix command "comm -12" to have common IDs between exons and introns between two files after selecting the IDs for both, if you want to have features at the same positions (like first introns and first exons, last introns and last exons, etc)
 
-5) convert the gff files in bed6 format (don't forget bed format is 0-based), to supply to the script that will do the profiles.
+5) convert the gff files in bed6 format (don't forget, bed format is 0-based), to supply to the script that will do the profiles.
 
 
              
