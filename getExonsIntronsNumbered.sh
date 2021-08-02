@@ -3,28 +3,24 @@
 
 ###### input data ###########
 
-#gff="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_metatranscripts/gencode26_DIS3_scallop_metatranscripts.gff"
-
-#gff="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_metatranscripts/gencode26_DIS3_scallop_intron.gff"
-
 gff="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_work_on_introns/gencode26_DIS3_scallop_introns.gff3"
 
-
-#output_dir="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_metatranscripts/gencode26_DIS3_scallop_metatranscripts_exons_numbered/"
-
-#output_dir="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_metatranscripts/gencode26_DIS3_scallop_metatranscripts_introns_numbered/"
 
 output_dir="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_work_on_introns/"
 
 #feat_to_number="exon"
-
 feat_to_number="intron"
-
 
 tag_last="yes"
 
 
-###########################
+#character after the attribute "Parent" in your gff. If there's no character, put "$" (it'll be used as regex)
+#we use this to avoid partial matches
+
+awk_end=";"
+
+
+##########  end of input data #######
 
 
 output_dir="${output_dir}/"
@@ -39,13 +35,6 @@ if [ -d $final_subscript ]; then rm -rf $final_subscript ;fi
 
 mkdir $final_subscript
 
-
-#this is when you already have one transcript per gene (= metatranscript)
-#|grep -E -i ${type_to_select}
-
-#|grep -E "${IDs_to_select}"
-
-awk_end=";"
 parent_list=($(grep -P "\t${feat_to_number}" $gff |cut -f9|sed 's/;/\n/g'|grep "Parent"|grep -v -E -i "rRNA|tRNA|snoRNA|snRNA|scarRNA|7SK|Y_RNA|misc|paralo|PAR_Y|PAR_X" |awk -v awk_end=$awk_end '{print $1awk_end}'|sort -u))		
 
 
