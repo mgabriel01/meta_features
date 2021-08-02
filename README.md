@@ -10,7 +10,7 @@ get meta-features/profiles from bigwig files and gff annotations
 
 4) Use this script **getExonsIntronsNumbered.sh**[https://github.com/mgabriel01/meta_features/blob/main/getExonsIntronsNumbered.sh] to give position number to exons and/or introns (depending on what you want, you can have the last intron or exon, by using the pattern "position=Last_intron" or "position=Last_exon" . Modify the section of the input data according to your situation.
               
-              -> extra : Use the unix command "comm -12" to have common IDs between exons and introns between two files, if you take features at the same positions
+              -> extra : Use the unix command "comm -12" to have common IDs between exons and introns between two files after selecting the IDs for both, if you take features at the same positions (like first introns and first exons, last introns and last exons, etc)
 
 5) convert the gff files in bed6 format (don't forget bed format is 0-based), to supply to the script that will do the profiles.
 
