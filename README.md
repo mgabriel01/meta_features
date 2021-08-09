@@ -6,7 +6,7 @@ get meta-features/profiles from bigwig files and gff annotations
 
 2) Use the script **insert script here** to have meta-transcripts (for a given gene, exons from all transcripts are merged, to have a single line in genome browsers like IGV). Run the script without any options to see the inputs. Dont forget to redirect the stdout to a file.
 
-   -> example on GAPDH : ![]()
+              -> Example on GAPDH : ![](https://github.com/mgabriel01/meta_features/blob/main/igv_snapshot_gapdh_metatranscript.png)
 
 3) Use the script **insert script here** to create the "intron" feature. Run the script without any options to see the inputs. Dont forget to redirect the stdout to a file.
 
