@@ -48,8 +48,8 @@ get meta-features/profiles from bigwig files and gff annotations
 - 7-) Fill the tables & associative tables in the script **insert script here**,  in the section `input data`, then run it.
 
 
-This design will create a plot with 3 panels (in the example, we have 3 fractions : chromatin, cytoplasm, total) ; for each of them, we want the exact same parts : Exon1, Intron1, Exon2, Intron2, Last_intron, Last_exon
-So we supply for each of them : 
+      The actual design in the script will create a plot with 3 panels (in the example, we have 3 fractions : chromatin, cytoplasm, total) ; for each of them, we want the exact same parts : Exon1, Intron1, Exon2, Intron2, Last_intron, Last_exon
+      So we supply for each of them : 
 
                          - the same name of features -> variable "all_features"
                          - the same annotations in bed format -> variable "all_bed"
