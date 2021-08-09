@@ -85,7 +85,7 @@ The design file(s), from the variable `all_design` in the script, should be like
             /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_wt_ad_3_plus_strand_normalization_RPM.bw	wt_ad	1
       
     
-   1 st column : full path to the bigwig plus strand (**the minus strand will be automatically loaded : it should have the pattern "_minus_" at the same place of "_plus_", and be in the same directory**)
+   1 st column : full path to the bigwig plus strand (**the minus strand will be automatically loaded : it should have the pattern "_minus_", and be in the same directory as the plus strand**)
   
    2 nd column : name of the condition
   
