@@ -35,7 +35,7 @@ get meta-features/profiles from bigwig files and gff annotations
               Example on GAPDH :
    ![](https://github.com/mgabriel01/meta_features/blob/main/igv_snapshot_gapdh_metatranscript.png)
 
-- 3-) Use the script **getTranscriptByExonsByStrand.sh** [https://github.com/mgabriel01/meta_features/blob/main/getTranscriptByExonsByStrand.sh] on the result of the script **getMergedExonsPerGenes.sh** (empty run to see the inputs), it will give you the higher level (by default it's "transcript") ; **run it with the option `-u "yes"`**, in order to avoid to have many genes with the same gene_id, that could create issues with the next script (paralogous genes), then concatenate both files (it's in order to create the intronic features).
+- 3-)* Use the script **getTranscriptByExonsByStrand.sh** [https://github.com/mgabriel01/meta_features/blob/main/getTranscriptByExonsByStrand.sh] on the result of the script **getMergedExonsPerGenes.sh** (empty run to see the inputs), it will give you the higher level (by default it's "transcript") ; **run it with the option `-u "yes"`**, in order to avoid to have many genes with the same gene_id, that could create issues with the next script (paralogous genes), then concatenate both files (it's in order to create the intronic features).
 
 
 - 4-)* Use the script **getIntronsByTranscripts.R** [https://github.com/mgabriel01/meta_features/blob/main/getIntronsByTranscripts.R] to create the "intron" feature. Run the script without any options to see the inputs. Dont forget to redirect the stdout to a file.
