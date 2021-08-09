@@ -45,7 +45,20 @@ get meta-features/profiles from bigwig files and gff annotations
 - 5-) Convert the gff files in bed6 format (don't forget, bed format is 0-based), to supply to the script that will do the profiles.
 
 
-- 7-) Fill the tables & associative tables in the script **insert script here** , then run it.
+- 7-) Fill the tables & associative tables in the script **insert script here**,  in the section `input data`, then run it.
+
+
+This design will create a plot with 3 panels (in the example, we have 3 fractions : chromatin, cytoplasm, total) ; for each of them, we want the exact same parts : Exon1, Intron1, Exon2, Intron2, Last_intron, Last_exon
+So we supply for each of them : 
+
+                         - the same name of features -> variable "all_features"
+                         - the same annotations in bed format -> variable "all_bed"
+                         - the same labels for the start and the end of the features -> variable "all_delim"
+                         - their own file containing their bigwig files (= coverage files ; supply only the plus strand, the minus one will be found automatically in the same directory) -> variable "all_design"
+                         - the associated prefix for each panel, and for each feature in the panel -> variable "all_prefix"
+                         
+ At the end, the 3 variables, should have the same length (in the example, it's 18)
+
 
 The design file(s), from the variable `all_design` in the script, should be like this (field separator : tabulations) :
 
@@ -68,13 +81,15 @@ The design file(s), from the variable `all_design` in the script, should be like
             /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_wt_ad_2_plus_strand_normalization_RPM.bw	wt_ad	1
             /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_wt_ad_3_plus_strand_normalization_RPM.bw	wt_ad	1
       
-    1 st column : full path to the bigwig plus strand (the minus strand will be automatically loaded : it should have the pattern "_minus_" at the same place of "_plus_" in the file in the design)
+    
+   1 st column : full path to the bigwig plus strand (the minus strand will be automatically loaded : it should have the pattern "_minus_" at the same place of "_plus_" in the file in the design)
   
-    2 nd column : name of the condition
+   2 nd column : name of the condition
   
-    last column : the normalization factor (if it's already normalized, or you don't want to, just put 1 as in the example)
+   last column : the normalization factor (if it's already normalized, or you don't want to, just put 1 as in the example)
+   
 
-Example of plot :
+-8-) Example of plot from the desin in the script **insert script here** :
 
 
 ![](https://github.com/mgabriel01/meta_features/blob/main/metagene_plot_multipanel_PCG_chroma_PCG_cyto_PCG_tot_Exon1_Exon2_Intron1_Intron2_Last_exon_Last_intron_model2.png)
