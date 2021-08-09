@@ -70,7 +70,9 @@ The design file(s) should be like this (field separator : tabulations) :
             /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_wt_ad_3_plus_strand_normalization_RPM.bw	wt_ad	1
       
   1 st column : full path to the bigwig plus strand (the minus strand will be automatically loaded : it should have the pattern "_minus_" at the same place of "_plus_" in the file in the design)
+  
   2 nd column : name of the condition
+  
   last column : the normalization factor (if it's already normalized, or you don't want to, just put 1 as in the example)
 
 
