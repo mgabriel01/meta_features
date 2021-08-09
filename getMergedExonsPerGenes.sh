@@ -12,7 +12,7 @@ usage() { echo -e "Usage: $0 <Required arguments>\n\n
  \tOptional arguments :\n
                   -f <feature (default : gene_name ; other choice : gene_id)>\n
                   -l <level (default : exon)>\n
-                  -p < process_number_limit (default=0) >\n" 1>&2; exit 1;}
+                  -p < process_number_limit (default=0 ; it means it will use all the available cores to run the subscripts) >\n" 1>&2; exit 1;}
 
 [[ $# -eq 0 ]] && usage
 
