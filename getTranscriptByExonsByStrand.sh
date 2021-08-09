@@ -5,7 +5,7 @@ usage() { echo -e "Usage: $0 <Required arguments>\n\n
                   -a < annotation >\n                 
                 
  \tOptional arguments :\n
-                  -p < process_number_limit (default=0) >\n
+                  
                   -u < unique on chrs & 9th column (default=no ; others : yes) >\n
                   -e < feature to extract (default=\"exon\") >\n
                   -f < level to put (default is \"transcript\") >\n" 1>&2; exit 1;}
@@ -15,13 +15,7 @@ usage() { echo -e "Usage: $0 <Required arguments>\n\n
 while getopts ":a:u:p:f:e:" opt; do
   case $opt in
   
-      p)
-      
-	      export process_number_limit=$OPTARG
-	      
-	      #echo -e "\n#process_number_limit is : $process_number_limit\n" >&2
-	      
-              ;;
+    
       u)
       
 	      export uniqness=$OPTARG
@@ -64,11 +58,8 @@ while getopts ":a:u:p:f:e:" opt; do
   esac
 done
 
-if [ "$process_number_limit" == "" ];then
+bedtools="bedtools"
 
-  export process_number_limit=0
-
-fi
 
 
 if [ "$annotation" == "" ]; then
@@ -78,7 +69,6 @@ echo -e "\none required argument is missing or is wrong !!\n"
       exit 1
 fi
 
-bedtools="bedtools"
 
 if [[ "$feature" == "" ]];then
 
