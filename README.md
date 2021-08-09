@@ -36,7 +36,7 @@ get meta-features/profiles from bigwig files and gff annotations
               Example on GAPDH :
    ![](https://github.com/mgabriel01/meta_features/blob/main/igv_snapshot_gapdh_metatranscript.png)
 
-3)* Use the script **insert script here** to create the "intron" feature. Run the script without any options to see the inputs. Dont forget to redirect the stdout to a file.
+3)* Use the script **getIntronsByTranscripts.R** [https://github.com/mgabriel01/meta_features/blob/main/getIntronsByTranscripts.R] to create the "intron" feature. Run the script without any options to see the inputs. Dont forget to redirect the stdout to a file.
 
 4)* Use this script **getExonsIntronsNumbered.sh**[https://github.com/mgabriel01/meta_features/blob/main/getExonsIntronsNumbered.sh] to give position number to exons and/or introns (depending on what you want, you can have the last intron or exon, by using the pattern "position=Last_intron" or "position=Last_exon" . Modify the section of the input data according to your situation.
               
