@@ -1,6 +1,25 @@
 # meta_features
 get meta-features/profiles from bigwig files and gff annotations
 
+## Prerequisites
+
+R packages : 
+        ggplot2
+        GenomicFeatures
+        GenomicAlignments
+        GenomicRanges
+        foreach
+        Biostrings
+        doParallel
+        data.table
+        rtracklayer
+        ggpubr
+        plyr
+        gridExtra
+        optparse
+        compiler
+        gtools
+
 
 1) Use the script **insert script here** to have bigwig/tdf files raw & normalized in rpm (the bigwig files will be used for the meta-profile). Modify the section of the input data according to your situation.
 
