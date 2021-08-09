@@ -46,9 +46,9 @@ get meta-features/profiles from bigwig files and gff annotations
 5) convert the gff files in bed6 format (don't forget, bed format is 0-based), to supply to the script that will do the profiles.
 
 
-7) fill the tables & associative tables in the script **insert script here** , then run the script
+7) fill the tables & associative tables in the script **insert script here** , then run it.
 
-The design file(s) should be like this :
+The design file(s) should be like this (field separator : tabulations) :
 
             /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_1_1_plus_strand_normalization_RPM.bw	clone_2_1	1
             /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_1_2_plus_strand_normalization_RPM.bw	clone_2_1	1
