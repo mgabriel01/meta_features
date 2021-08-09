@@ -12,7 +12,7 @@ usage() { echo -e "Usage: $0 <Required arguments>\n\n
 
 [[ $# -eq 0 ]] && usage
 
-while getopts ":a:u:p:f:e:" opt; do
+while getopts ":a:u:f:e:" opt; do
   case $opt in
   
     
