@@ -46,6 +46,35 @@ get meta-features/profiles from bigwig files and gff annotations
 5) convert the gff files in bed6 format (don't forget, bed format is 0-based), to supply to the script that will do the profiles.
 
 
+7) fill the tables & associative tables in the script **insert script here** , then run the script
+
+The design file(s) should be like this :
+
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_1_1_plus_strand_normalization_RPM.bw	clone_2_1	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_1_2_plus_strand_normalization_RPM.bw	clone_2_1	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_1_3_plus_strand_normalization_RPM.bw	clone_2_1	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_1_ad_1_plus_strand_normalization_RPM.bw	clone_2_1_ad	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_1_ad_2_plus_strand_normalization_RPM.bw	clone_2_1_ad	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_1_ad_3_plus_strand_normalization_RPM.bw	clone_2_1_ad	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_7_1_plus_strand_normalization_RPM.bw	clone_2_7	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_7_2_plus_strand_normalization_RPM.bw	clone_2_7	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_7_3_plus_strand_normalization_RPM.bw	clone_2_7	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_7_ad_1_plus_strand_normalization_RPM.bw	clone_2_7_ad	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_7_ad_2_plus_strand_normalization_RPM.bw	clone_2_7_ad	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_7_ad_3_plus_strand_normalization_RPM.bw	clone_2_7_ad	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_wt_1_plus_strand_normalization_RPM.bw	wt	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_wt_2_plus_strand_normalization_RPM.bw	wt	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_wt_3_plus_strand_normalization_RPM.bw	wt	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_wt_ad_1_plus_strand_normalization_RPM.bw	wt_ad	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_wt_ad_2_plus_strand_normalization_RPM.bw	wt_ad	1
+            /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_wt_ad_3_plus_strand_normalization_RPM.bw	wt_ad	1
+      
+  1 st column : full path to the bigwig plus strand (the minus strand will be automatically loaded : it should have the pattern "_minus_" at the same place of "_plus_" in the file in the design)
+  2 nd column : name of the condition
+  last column : the normalization factor (if it's already normalized, or you don't want to, just put 1 as in the example)
+
+
+
 **\* Those steps are optional if you already have your defined features**
 
 
