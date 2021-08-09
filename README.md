@@ -89,7 +89,7 @@ The design file(s), from the variable `all_design` in the script, should be like
    last column : the normalization factor (if it's already normalized, or you don't want to, just put 1 as in the example)
    
 
--8-) Example of plot from the design in the script **insert script here** :
+- 8-) Example of plot from the design in the script **insert script here** :
 
 
 ![](https://github.com/mgabriel01/meta_features/blob/main/metagene_plot_multipanel_PCG_chroma_PCG_cyto_PCG_tot_Exon1_Exon2_Intron1_Intron2_Last_exon_Last_intron_model2.png)
