@@ -43,10 +43,10 @@ get meta-features/profiles from bigwig files and gff annotations
              Remark : Use the unix command "comm -12 IDs_file1.txt IDs_file2.txt" to have common IDs between exons and introns between two files after selecting the IDs for both, if you want to have features at the same positions (like first introns and first exons, last introns and last exons, etc). 
              Here IDs_file1.txt & IDs_file2.txt are text files with IDs you would like to intersect.
 
-5) convert the gff files in bed6 format (don't forget, bed format is 0-based), to supply to the script that will do the profiles.
+5) Convert the gff files in bed6 format (don't forget, bed format is 0-based), to supply to the script that will do the profiles.
 
 
-7) fill the tables & associative tables in the script **insert script here** , then run it.
+7) Fill the tables & associative tables in the script **insert script here** , then run it.
 
 The design file(s) should be like this (field separator : tabulations) :
 
