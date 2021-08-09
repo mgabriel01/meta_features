@@ -31,7 +31,7 @@ get meta-features/profiles from bigwig files and gff annotations
 
 1) Use the script **get_tdf_bw_from_bam.sh** [https://github.com/mgabriel01/meta_features/blob/main/get_tdf_bw_from_bam.sh] to have bigwig/tdf files raw & normalized in rpm (the bigwig files will be used for the meta-profile). Modify the section of the input data according to your situation.
 
-2)* Use the script **insert script here** to have meta-transcripts (for a given gene, exons from all transcripts are merged, to have a single line in genome browsers like IGV). Run the script without any options to see the inputs. Dont forget to redirect the stdout to a file.
+2)* Use the script **getMergedExonsPerGenes.sh** [https://github.com/mgabriel01/meta_features/blob/main/getMergedExonsPerGenes.sh] to have meta-transcripts (for a given gene, exons from all transcripts are merged, to have a single line in genome browsers like IGV). Run the script without any options to see the inputs. Dont forget to redirect the stdout to a file.
 
               Example on GAPDH :
    ![](https://github.com/mgabriel01/meta_features/blob/main/igv_snapshot_gapdh_metatranscript.png)
