@@ -57,7 +57,7 @@ get meta-features/profiles from bigwig files and gff annotations
                          - their own file containing their bigwig files (= coverage files ; supply only the plus strand, the minus one will be found automatically in the same directory) -> variable "all_design"
                          - the associated prefix for each panel, and for each feature in the panel -> variable "all_prefix"
                          
- At the end, the 3 variables, should have the same length (in the example, it's 18)
+      At the end, the 3 variables, should have the same length (in the example, it's 18)
 
 
 The design file(s), from the variable `all_design` in the script, should be like this (field separator : tabulations) :
