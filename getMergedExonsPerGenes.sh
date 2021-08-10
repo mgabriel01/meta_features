@@ -110,19 +110,6 @@ fi
 #bedtools program
 bedtools="bedtools"
 
-#script that will allow to construct introns for each transcript of each gene
-getIntronsByTranscripts="/home/marcgabriel/Desktop/scripts/getIntronsByTranscripts.R"
-
-#gff file
-#annotation="/home/marcgabriel/Documents/gencode27lift37/gencode.v27lift37.annotation.gff3"
-
-#output_dir="/home/marcgabriel/Documents/gencode27lift37/"
-
-#number of chromosomes to process in parallel
-#if 0, that means it will process all the subscripts (genes) in parallel : let it as it is, the script doesn't use a big memory
-#process_number_limit=0
-
-
 #####################
 
 
@@ -151,15 +138,8 @@ gff_file="${temp_dir}modified_annot.gff3"
 if [ ! -f $gff_file ];then
 
 
-  if [ "$include_introns" == "yes" ];then
-
-    sort -T ${temp_dir} -S "4G" --parallel=8 -k1,1 -k4,4n <(grep -v "^#" $annotation) <($getIntronsByTranscripts $annotation $temp_dir "yes") >$gff_file
-  
-  else
-  
     grep -v "^#" $annotation | sort -T ${temp_dir} -S "4G" --parallel=8 -k1,1 -k4,4n >$gff_file
   
-  fi
 
 fi
 
