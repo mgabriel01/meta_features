@@ -108,7 +108,7 @@ The design file(s), from the variable `all_design` in the script, should be like
 
 ![](https://github.com/mgabriel01/meta_features/blob/main/metagene_plot_multipanel_PCG_chroma_PCG_cyto_PCG_tot_Exon1_Exon2_Intron1_Intron2_Last_exon_Last_intron_model2.png)
 
-## ToDo :
+## To Do list :
 - create a config file for **insert script here**
   
 
