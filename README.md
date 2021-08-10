@@ -23,7 +23,7 @@ get meta-features/profiles from bigwig files and gff annotations
             compiler
             gtools
             
-- UCSC tools :
+- UCSC tools for bigwig/tdf files (http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/) :
            
           bedGraphToBigWig
 
@@ -31,8 +31,12 @@ get meta-features/profiles from bigwig files and gff annotations
 
           bigWigToWig
 
-          bigWigToBedGraph            
-            
+          bigWigToBedGraph 
+
+- igvtools (https://software.broadinstitute.org/software/igv/download)
+- 
+- bedtools version >= 2.29.0
+
 ## Steps
 
 - 1-) Use the script **get_tdf_bw_from_bam.sh** [https://github.com/mgabriel01/meta_features/blob/main/get_tdf_bw_from_bam.sh] to have bigwig/tdf files raw & normalized in rpm (the bigwig files will be used for the meta-profile). Modify the section of the input data according to your situation.
