@@ -23,7 +23,15 @@ get meta-features/profiles from bigwig files and gff annotations
             compiler
             gtools
             
-            
+- UCSC tools :
+           
+          bedGraphToBigWig
+
+          wigToBigWig
+
+          bigWigToWig
+
+          bigWigToBedGraph            
             
 ## Steps
 
