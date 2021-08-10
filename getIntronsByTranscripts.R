@@ -11,9 +11,9 @@ if (length(args)==0){
 suppressMessages(library(GenomicFeatures))
 suppressMessages(library(data.table))
 suppressMessages(library(rtracklayer))
-library(data.table)
-library(doParallel)
-library(foreach)
+suppressMessages(library(data.table))
+suppressMessages(library(doParallel))
+suppressMessages(library(foreach))
 
 file<-args[1]
 
