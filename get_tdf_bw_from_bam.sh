@@ -152,7 +152,7 @@ for one_condition in ${!condition_list[*]};do
   fi
   
   
-  #list of bam
+  #bam file
   file=$(find $input_dir -name "*bam" |grep -v -i "unmapped"| grep "${one_condition}${separator}.*\.bam$")
   
   if [[ ! -f $file ]];then
