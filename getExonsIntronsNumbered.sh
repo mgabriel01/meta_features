@@ -11,6 +11,8 @@ output_dir="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominik
 #feat_to_number="exon"
 feat_to_number="intron"
 
+#do you want to add and additional attribute to the gff to tag first and last features ?
+#it will have the pattern "position=Last_*"
 tag_last="yes"
 
 
