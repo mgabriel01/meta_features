@@ -74,7 +74,7 @@ get meta-features/profiles from bigwig files and gff annotations
       At the end, the 3 variables, should have the same length (in the example, it's 18)
 
 
-The design file(s), from the variable `all_design` in the script, should be like this (field separator : tabulations) :
+The design file(s), from the variable `all_design` in the script, should be like this (field separator : tabulation) :
 
             /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_1_1_plus_strand_normalization_RPM.bw	clone_2_1	1
             /media/marcgabriel/homeborn/dominika_hxrn1_cyto_chroma_tot_bigwig_files/chr_2_1_2_plus_strand_normalization_RPM.bw	clone_2_1	1
