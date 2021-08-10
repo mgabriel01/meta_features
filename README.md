@@ -30,22 +30,22 @@ get meta-features/profiles from bigwig files and gff annotations
 - 1-) Use the script **get_tdf_bw_from_bam.sh** [https://github.com/mgabriel01/meta_features/blob/main/get_tdf_bw_from_bam.sh] to have bigwig/tdf files raw & normalized in rpm (the bigwig files will be used for the meta-profile). Modify the section of the input data according to your situation.
 
 
-- 2-)* Use the script **getMergedExonsPerGenes.sh** [https://github.com/mgabriel01/meta_features/blob/main/getMergedExonsPerGenes.sh] to have meta-transcripts (for a given gene, exons from all transcripts are merged, to have a single line in genome browsers like IGV). Run the script without any options to see the inputs. Dont forget to redirect the stdout to a file.
+- 2-) Use the script **getMergedExonsPerGenes.sh** [https://github.com/mgabriel01/meta_features/blob/main/getMergedExonsPerGenes.sh] to have meta-transcripts (for a given gene, exons from all transcripts are merged, to have a single line in genome browsers like IGV). Run the script without any options to see the inputs. Dont forget to redirect the stdout to a file.[**skip this step if you already have your defined features in bed format**]
 
               Example on GAPDH :
    ![](https://github.com/mgabriel01/meta_features/blob/main/igv_snapshot_gapdh_metatranscript.png)
 
-- 3-)* Use the script **getTranscriptByExonsByStrand.sh** [https://github.com/mgabriel01/meta_features/blob/main/getTranscriptByExonsByStrand.sh] on the result of the script **getMergedExonsPerGenes.sh** (empty run to see the inputs), it will give you the higher level (by default it's "transcript") ; **run it with the option `-u "yes"`**, in order to avoid to have many genes with the same gene_id, that could create issues with the next script (paralogous genes), then concatenate both files (it's in order to create the intronic features).
+- 3-) Use the script **getTranscriptByExonsByStrand.sh** [https://github.com/mgabriel01/meta_features/blob/main/getTranscriptByExonsByStrand.sh] on the result of the script **getMergedExonsPerGenes.sh** (empty run to see the inputs), it will give you the higher level (by default it's "transcript") ; **run it with the option `-u "yes"`**, in order to avoid to have many genes with the same gene_id, that could create issues with the next script (paralogous genes), then concatenate both files (it's in order to create the intronic features).[**skip this step if you already have your defined features in bed format**]
 
 
-- 4-)* Use the script **getIntronsByTranscripts.R** [https://github.com/mgabriel01/meta_features/blob/main/getIntronsByTranscripts.R] to create the "intron" feature. Run the script without any options to see the inputs. Dont forget to redirect the stdout to a file.
+- 4-) Use the script **getIntronsByTranscripts.R** [https://github.com/mgabriel01/meta_features/blob/main/getIntronsByTranscripts.R] to create the "intron" feature. Run the script without any options to see the inputs. Dont forget to redirect the stdout to a file.[**skip this step if you already have your defined features in bed format**]
 
-- 5-)* Use this script **getExonsIntronsNumbered.sh**[https://github.com/mgabriel01/meta_features/blob/main/getExonsIntronsNumbered.sh] to give position number to exons and/or introns (depending on what you want, you can have the last intron or exon, by using the pattern "position=Last_intron" or "position=Last_exon" . Modify the section of the input data according to your situation.
+- 5-) Use this script **getExonsIntronsNumbered.sh**[https://github.com/mgabriel01/meta_features/blob/main/getExonsIntronsNumbered.sh] to give position number to exons and/or introns (depending on what you want, you can have the last intron or exon, by using the pattern "position=Last_intron" or "position=Last_exon" . Modify the section of the input data according to your situation.[**skip this step if you already have your defined features in bed format**]
               
              Remark : Use the unix command "comm -12 IDs_file1.txt IDs_file2.txt" to have common IDs between exons and introns between two files after selecting the IDs for both, if you want to have features at the same positions (like first introns and first exons, last introns and last exons, etc). 
              Here IDs_file1.txt & IDs_file2.txt are text files with IDs you would like to intersect.
 
-- 6-) Convert the gff files in bed6 format (don't forget, bed format is 0-based), to supply to the script that will do the profiles.
+- 6-) Convert the gff files in bed6 format (don't forget, bed format is 0-based), to supply to the script that will do the profiles.[**skip this step if you already have your defined features in bed format**]
 
 
 - 7-) Fill the tables & associative tables in the script **insert script here**,  in the section `input data`, then run it.
@@ -98,7 +98,6 @@ The design file(s), from the variable `all_design` in the script, should be like
 ![](https://github.com/mgabriel01/meta_features/blob/main/metagene_plot_multipanel_PCG_chroma_PCG_cyto_PCG_tot_Exon1_Exon2_Intron1_Intron2_Last_exon_Last_intron_model2.png)
 
 
-**\* Those steps are optional if you already have your defined features**
 
 
              
