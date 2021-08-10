@@ -65,7 +65,7 @@ bigWigToBedGraph="/home/marcgabriel/Desktop/scripts/bigWigToBedGraph"
 
 
 #actually, it's a script that allows to compute the mean from a unionbegraph (bedtools unionbedg), but it can be modified to obtain the median
-getRowMedians="/home/marcgabriel/Desktop/scripts/getRowMedians.R"
+getRowMedians=$(dirname "$0")/getRowMedians.R
 
 genome="/home/marcgabriel/Documents/gencode32/GRCh38.primary_assembly_official_chromosomes.fa"
 
