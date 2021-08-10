@@ -7,7 +7,7 @@ getTranscriptByExonsByStrand="/home/marcgabriel/Desktop/scripts/getTranscriptByE
 
 usage() { echo -e "Usage: $0 <Required arguments>\n\n
  \tRequired arguments :\n
-                  -a < annotation >\n                 
+                  -a < annotation (gff3 format) >\n                 
                   -o < output dir >\n
  \tOptional arguments :\n
                   -f <feature (default : gene_name ; other choice : gene_id)>\n
