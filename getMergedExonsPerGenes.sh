@@ -132,7 +132,6 @@ sample_scripts_dir="${temp_dir}subscripts_dir/"
 if [ -d $sample_scripts_dir ]; then rm -rf $sample_scripts_dir; fi 
 mkdir $sample_scripts_dir
 
-#create introns
 gff_file="${temp_dir}modified_annot.gff3"
 
 if [ ! -f $gff_file ];then
