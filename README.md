@@ -110,7 +110,7 @@ The design file(s), from the variable `all_design` in the script, should be like
 
 ## To Do list :
 - create a config file for **insert script here** (to avoid to go inside the script)
-- create options for script **getExonsIntronsNumbered.sh**, **get_tdf_bw_from_bam.sh** (to avoid to go inside the script)
+- create options for scripts : **getExonsIntronsNumbered.sh**, **get_tdf_bw_from_bam.sh** (to avoid to go inside the script)
   
 
 
