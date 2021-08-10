@@ -34,7 +34,6 @@ get meta-features/profiles from bigwig files and gff annotations
           bigWigToBedGraph 
 
 - igvtools (https://software.broadinstitute.org/software/igv/download)
-- 
 - bedtools version >= 2.29.0
 
 ## Steps
