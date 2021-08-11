@@ -85,6 +85,7 @@ declare -A condition_list=(
 
 )
 
+#associative array that links the samples above, and their condition (will be used to do the mean)
 declare -A condition_list2=(
 
 	[FFPE_normal_1]="FFPE_normal"
@@ -97,9 +98,9 @@ declare -A condition_list2=(
 
 )
 
-#separator between the samples; example : between D268T24.unique.bam & D268T40.unique.bam, the separator is "."
+#separator between the samples; example : between D268T24.unique.bam & D268T40.unique.bam, the separator is ".unique"
 #this character will be concatenated with the key in the associative array to find the bam file
-separator="."
+separator=".unique"
 
 ################## end of input data #######################################
 
