@@ -88,8 +88,12 @@ find ${final_subscript} -name "final_subscript_*\.sh" | xargs -n 1 -P $process_n
 #concatenate the sub gff files
 find ${temp_dir} -name "*with_*.gff"|sort -k1,1 -k4,4n | xargs cat >${output_dir}${feat_to_number}_numbered.gff
 
+#remove subscripts
+rm -rf ${final_subscript}
+
 #remove temp files
 rm -rf ${temp_dir}
+
 
 echo -e "\n\n-> check file : ${output_dir}${feat_to_number}_numbered.gff\n\n"
 	
