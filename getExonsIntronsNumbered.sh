@@ -15,13 +15,6 @@ feat_to_number="intron"
 #it will have the pattern "position=Last_*"
 tag_last="yes"
 
-
-#character after the attribute "Parent" in your gff. If there's no character, put "$" (it'll be used as regex)
-#we use this to avoid partial matches
-
-awk_end=";"
-
-
 ##########  end of input data #######
 
 
@@ -42,8 +35,7 @@ parent_list=($(grep -P "\t${feat_to_number}" $gff |cut -f9|sed 's/;/\n/g'|grep "
 
 for i in ${parent_list[*]};do 
 
-	  #strand=$(LC_ALL=C grep -m 1 "$i" $gff|cut -f7)
-	  strand=($(LC_ALL=C grep "$i" $gff|cut -f7|sort -u))
+	  strand=($(LC_ALL=C grep -E "${i}$|${i};" $gff|cut -f7|sort -u))
 	  
 	  #check the uniqueness of the IDs, if they are not, don't process them
 	  if [[ ${#strand[*]} -eq 1 ]];then
