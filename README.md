@@ -36,6 +36,7 @@ get meta-features/profiles from bigwig files and gff annotations
 
 - igvtools (https://software.broadinstitute.org/software/igv/download)
 - bedtools version >= 2.29.0 (https://bedtools.readthedocs.io/en/latest/)
+- samtools version >= 1.9 (http://www.htslib.org/download/)
 
 ## Steps
 
