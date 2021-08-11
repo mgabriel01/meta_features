@@ -106,8 +106,9 @@ The design file(s), from the variable `all_design` in the script, should be like
 
 - 8-) Example of plot from the design in the script **get_metagene_with_ggplot.sh** :
 
-
 ![](https://github.com/mgabriel01/meta_features/blob/main/metagene_plot_multipanel_PCG_chroma_PCG_cyto_PCG_tot_Exon1_Exon2_Intron1_Intron2_Last_exon_Last_intron_model2.png)
+
+The colors are the ggplot defaults ones, but you can use the functions `scale_color_manual()` & `scale_fill_manual()` to attribute a wanted color for your conditions in the script **getMultipanelMetagenePlot.R** [https://github.com/mgabriel01/meta_features/blob/main/getMultipanelMetagenePlot.R]
 
 ## To Do list :
 - create a config file for **insert script here** (to avoid to go inside the script)
