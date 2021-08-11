@@ -40,7 +40,7 @@ for i in ${parent_list[*]};do
 	  #check the uniqueness of the IDs, if they are not, don't process them
 	  if [[ ${#strand[*]} -eq 1 ]];then
 	  
-	         clean_id=$(echo "${i}"|sed -E "s/$awk_end//g"|sed -E 's/Parent=//g')
+	         clean_id=$(echo "${i}"|sed -E "s/;//g"|sed -E 's/Parent=//g')
 	         
 	  
 			  echo -e "#!/bin/bash\n" >${final_subscript}final_subscript_${clean_id}.sh
