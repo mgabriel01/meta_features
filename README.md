@@ -60,7 +60,7 @@ get meta-features/profiles from bigwig files and gff annotations
 - 6-) Convert the gff files in bed6 format (don't forget, bed format is 0-based), to supply to the script that will do the profiles.[**skip this step if you already have your defined features in bed format**]
 
 
-- 7-) Fill the tables & associative tables in the script **insert script here**,  in the section `input data`, then run it.
+- 7-) Fill the tables & associative tables in the script **get_metagene_with_ggplot.sh** [https://github.com/mgabriel01/meta_features/blob/main/get_metagene_with_ggplot.sh], in the section `input data`, then run it.
 
 
       The actual design in the script will create a plot with 3 panels (in the example, we have 3 fractions : chromatin, cytoplasm, total) ; for each of them, we want the exact same parts : Exon1, Intron1, Exon2, Intron2, Last_intron, Last_exon
@@ -104,7 +104,7 @@ The design file(s), from the variable `all_design` in the script, should be like
    last column : the normalization factor (if it's already normalized, or you don't want to, just put 1 as in the example)
    
 
-- 8-) Example of plot from the design in the script **insert script here** :
+- 8-) Example of plot from the design in the script **get_metagene_with_ggplot.sh** :
 
 
 ![](https://github.com/mgabriel01/meta_features/blob/main/metagene_plot_multipanel_PCG_chroma_PCG_cyto_PCG_tot_Exon1_Exon2_Intron1_Intron2_Last_exon_Last_intron_model2.png)
