@@ -22,6 +22,7 @@ get meta-features/profiles from bigwig files and gff annotations
             optparse
             compiler
             gtools
+            egg
             
 - UCSC tools for bigwig/tdf files (http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/) :
            
