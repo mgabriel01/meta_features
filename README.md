@@ -108,10 +108,10 @@ The design file(s), from the variable `all_design` in the script, should be like
 
 ![](https://github.com/mgabriel01/meta_features/blob/main/metagene_plot_multipanel_PCG_chroma_PCG_cyto_PCG_tot_Exon1_Exon2_Intron1_Intron2_Last_exon_Last_intron_model2.png)
 
-The colors are the ggplot defaults ones, but you can use the functions `scale_color_manual()` & `scale_fill_manual()` to attribute a wanted color for your conditions in the script **getMultipanelMetagenePlot.R** [https://github.com/mgabriel01/meta_features/blob/main/getMultipanelMetagenePlot.R]
+The colors are the ones by default in ggplot, but you can use the functions `scale_color_manual()` & `scale_fill_manual()` to assign a desired color for your conditions in the script **getMultipanelMetagenePlot.R** [https://github.com/mgabriel01/meta_features/blob/main/getMultipanelMetagenePlot.R], where the function `ggplot()` is called.
 
 ## To Do list :
-- create a config file for **insert script here** (to avoid to go inside the script)
+- create a config file for **get_metagene_with_ggplot.sh** (to avoid to go inside the script)
 - create options for scripts : **getExonsIntronsNumbered.sh**, **get_tdf_bw_from_bam.sh** (to avoid to go inside the script)
   
 
