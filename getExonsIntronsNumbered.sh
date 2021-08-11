@@ -15,6 +15,9 @@ feat_to_number="intron"
 #it will have the pattern "position=Last_*"
 tag_last="yes"
 
+#number of subscripts to run in parallel
+process_number_limit=30
+
 ##########  end of input data #######
 
 
@@ -74,7 +77,7 @@ for i in ${parent_list[*]};do
 
 done
 
-find ${final_subscript} -name "final_subscript_*\.sh" | xargs -n 1 -P 30 bash || { echo "parallel script failure !" 1>&2; exit; }
+find ${final_subscript} -name "final_subscript_*\.sh" | xargs -n 1 -P $process_number_limit bash || { echo "parallel script failure !" 1>&2; exit; }
 
 find ${output_dir} -name "*with_*.gff"|sort -k1,1 -k4,4n | xargs cat >${output_dir}${feat_to_number}_numbered.gff
 
