@@ -23,7 +23,6 @@
 
 #check if the R scripts are in the same directory as the main script
 metagene_rscript=$(dirname "$0")/get_metagene_with_ggplot.R
-
 if [ ! -f $metagene_rscript ];then echo -e "get_metagene_with_ggplot.R script is missing ! ";exit;fi
 chmod 755 $metagene_rscript
 
