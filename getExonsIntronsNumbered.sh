@@ -26,6 +26,12 @@ output_dir=$(echo $output_dir |sed 's/\/\//\//g')
 
 if [ ! -d $output_dir ];then mkdir $output_dir;fi
 
+#temp dir for sub gff files
+temp_dir="${output_dir}temp_dir/"
+if [ -d $temp_dir ]; then rm -rf $temp_dir ;fi
+
+mkdir $temp_dir
+
 
 #directory with all final subscripts to run
 final_subscript="${output_dir}final_subscripts/"
@@ -62,7 +68,7 @@ for i in ${parent_list[*]};do
 			  
 			  #give numbers according to the number of rows
 			  #if tag_last is set to yes, we give as attribute o the last feature "position=Last_*" (e.g : position=Last_intron or position=Last_exon)
-			  echo -e "nb_rows=\$(echo \"\${all_lines[*]}\"|sed 's/^ //g'|grep -v \"^\$\"|wc -l|awk '{print \$1}');echo \"\${all_lines[*]}\"|sed 's/^ //g'|grep -v \"^\$\"|awk -v nb_rows=\$nb_rows -v strand=$strand -v tag_last=$tag_last 'OFS=\"\\\t\"{if(tag_last!=\"yes\"){print \$0\";${feat_to_number}_number=\"NR}else{if(NR==nb_rows){print \$0\";${feat_to_number}_number=\"NR\";position=Last_${feat_to_number}\"}else{print \$0\";${feat_to_number}_number=\"NR}}}'|sed 's/;;/;/g' |sort -k4,4n >${output_dir}${clean_id}_with_${feat_to_number}_num.gff\n" >>${final_subscript}final_subscript_${clean_id}.sh	
+			  echo -e "nb_rows=\$(echo \"\${all_lines[*]}\"|sed 's/^ //g'|grep -v \"^\$\"|wc -l|awk '{print \$1}');echo \"\${all_lines[*]}\"|sed 's/^ //g'|grep -v \"^\$\"|awk -v nb_rows=\$nb_rows -v strand=$strand -v tag_last=$tag_last 'OFS=\"\\\t\"{if(tag_last!=\"yes\"){print \$0\";${feat_to_number}_number=\"NR}else{if(NR==nb_rows){print \$0\";${feat_to_number}_number=\"NR\";position=Last_${feat_to_number}\"}else{print \$0\";${feat_to_number}_number=\"NR}}}'|sed 's/;;/;/g' |sort -k4,4n >${temp_dir}${clean_id}_with_${feat_to_number}_num.gff\n" >>${final_subscript}final_subscript_${clean_id}.sh	
 			   
 	  
 	  else
@@ -79,9 +85,11 @@ done
 
 find ${final_subscript} -name "final_subscript_*\.sh" | xargs -n 1 -P $process_number_limit bash || { echo "parallel script failure !" 1>&2; exit; }
 
-find ${output_dir} -name "*with_*.gff"|sort -k1,1 -k4,4n | xargs cat >${output_dir}${feat_to_number}_numbered.gff
+#concatenate the sub gff files
+find ${temp_dir} -name "*with_*.gff"|sort -k1,1 -k4,4n | xargs cat >${output_dir}${feat_to_number}_numbered.gff
 
-find ${output_dir} -name "*with_*.gff"|while read f;do rm $f;done
+#remove temp files
+rm -rf ${temp_dir}
 
 echo -e "\n\n-> check file : ${output_dir}${feat_to_number}_numbered.gff\n\n"
 	
