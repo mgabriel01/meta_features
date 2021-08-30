@@ -557,9 +557,9 @@ done
 
 sort -u -k1,1 ${all_report} >${all_report}.tmp && mv ${all_report}.tmp ${all_report}
 
-files_to_remove=($(find ${output_dir} -name "*.bam"))
-files_to_remove+=($(find ${output_dir} -name "*.bam.bai"))
-files_to_remove+=($(find ${output_dir} -name "*strand.bed"))
+files_to_remove=($(find ${output_dir} -name "*.bam" | grep "_XS_"))
+files_to_remove+=($(find ${output_dir} -name "*.bam.bai"| grep "_XS_"))
+files_to_remove+=($(find ${output_dir} -name "*strand.bed" |grep "_coverage_"))
 
 echo -e "\nfiles to remove : \n${files_to_remove[*]}\n##############\n"
 
