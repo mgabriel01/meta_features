@@ -397,7 +397,7 @@ getDataforSignal<-function(LocInBed,BamFile,normalization){
     
     table_sense_antisense<-data.frame(sense=one_list,antisense=one_list_antisense)
     
-    write.table(table_sense_antisense,file=paste(i,"_",basename(as.character(BamFile)),"_",part,"_",one_feature,"_",one_prefix,".tsv",sep=""), sep='\t',row.names=F, col.names=T, quote=F)
+    write.table(table_sense_antisense,file=paste(i,"_",basename(as.character(BamFile)),"_",one_feature,"_",one_prefix,".tsv",sep=""), sep='\t',row.names=F, col.names=T, quote=F)
     
     
     
@@ -405,7 +405,7 @@ getDataforSignal<-function(LocInBed,BamFile,normalization){
   
   
   #retrieve for each gene, for the corresponding file, the table of values
-  sense_antisense_all_genes_one_file<-grep(paste("[0-9]+","_",basename(as.character(BamFile)),"_",part,"_",one_feature,"_",one_prefix,".tsv",sep=""),list.files(),value=T,perl=T)
+  sense_antisense_all_genes_one_file<-grep(paste("[0-9]+","_",basename(as.character(BamFile)),"_",one_feature,"_",one_prefix,".tsv",sep=""),list.files(),value=T,perl=T)
   
   #store the as list of list of values
   list_of_numerics_bothsense_parallelized<-list()
