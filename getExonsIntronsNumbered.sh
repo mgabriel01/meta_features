@@ -1,36 +1,26 @@
 #!/bin/bash
 
-
 ###### input data ###########
 
-gff="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_work_on_introns/gencode26_DIS3_scallop_introns.gff3"
+gff="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_metatranscripts/gencode26_DIS3_scallop_introns.gff"
 
+output_dir="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_metatranscripts/gencode26_DIS3_scallop_metatranscripts_exons_introns_numbered_with_last_feature_explicit/"
 
-output_dir="/media/marcgabriel/saylar5/Dominika_DIS3_analysis_10_12_2020/Dominika_DIS3_scallop_output3/cuffmerge_results/gencode26_DIS3_scallop_work_on_introns/"
+feat_to_number="exon"
 
-#feat_to_number="exon"
-feat_to_number="intron"
-
-#do you want to add and additional attribute to the gff to tag first and last features ?
-#it will have the pattern "position=Last_*"
 tag_last="yes"
 
 #number of subscripts to run in parallel
 process_number_limit=30
 
-##########  end of input data #######
+
+###########################
 
 
 output_dir="${output_dir}/"
 output_dir=$(echo $output_dir |sed 's/\/\//\//g')
 
 if [ ! -d $output_dir ];then mkdir $output_dir;fi
-
-#temp dir for sub gff files
-temp_dir="${output_dir}temp_dir/"
-if [ -d $temp_dir ]; then rm -rf $temp_dir ;fi
-
-mkdir $temp_dir
 
 
 #directory with all final subscripts to run
@@ -39,12 +29,20 @@ if [ -d $final_subscript ]; then rm -rf $final_subscript ;fi
 
 mkdir $final_subscript
 
+temp_dir="${output_dir}temp_dir/"
+if [ -d $temp_dir ]; then rm -rf $temp_dir ;fi
+
+mkdir $temp_dir
+
+
 parent_list=($(grep -P "\t${feat_to_number}" $gff |cut -f9|sed 's/;/\n/g'|grep "Parent"|grep -v -E -i "rRNA|tRNA|snoRNA|snRNA|scarRNA|7SK|Y_RNA|misc|paralo|PAR_Y|PAR_X" |awk -v awk_end=$awk_end '{print $1awk_end}'|sort -u))		
 
 
 for i in ${parent_list[*]};do 
-
+      
+	  #strand=$(LC_ALL=C grep -m 1 "$i" $gff|cut -f7)
 	  strand=($(LC_ALL=C grep -E "${i}$|${i};" $gff|cut -f7|sort -u))
+	  
 	  
 	  #check the uniqueness of the IDs, if they are not, don't process them
 	  if [[ ${#strand[*]} -eq 1 ]];then
@@ -88,15 +86,18 @@ find ${final_subscript} -name "final_subscript_*\.sh" | xargs -n 1 -P $process_n
 #concatenate the sub gff files
 find ${temp_dir} -name "*with_*.gff"|sort -k1,1 -k4,4n | xargs cat >${output_dir}${feat_to_number}_numbered.gff
 
-#remove subscripts
-rm -rf ${final_subscript}
-
 #remove temp files
 rm -rf ${temp_dir}
 
+#remove subscripts files
+rm -rf ${final_subscript}
 
 echo -e "\n\n-> check file : ${output_dir}${feat_to_number}_numbered.gff\n\n"
 	
+
+
+
+
 
 
 
